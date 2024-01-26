@@ -8,12 +8,14 @@
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
   "tags": ["Kermite", "RP2040", "サンプル"],
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/example_unified_keyboard",
+  "thumbnailUrl": "https://i.imgur.com/RZ4XvYV.png",
   "dataEntries": [
     {
       "marker": "PINDEFS",
       "items": [
         { "key": "board_led_type", "dataKind": "u8", "dataCount": 1 },
-        { "key": "vl_pin_columns", "dataKind": "vl_pins", "maxPinCount": 16 },
+        { "key": "vl_pin_columns", "dataKind": "vl_pins", "pinsCapacity": 16 },
         { "key": "vl_pin_rows", "dataKind": "vl_pins", "pinsCapacity": 16 }
       ]
     }
