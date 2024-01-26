@@ -1,0 +1,32 @@
+{
+  "projectGuid": "b2bba2fe-6a53-4403-b946-e256d3e92a92",
+  "projectName": "BoardLEDサンプル",
+  "introductionLines": [
+    "BoardLEDモジュールのサンプルです。",
+    "RP2040の各種マイコンボードに搭載されているLEDをインジケータとして使用します。"
+  ],
+  "targetMcu": "RP2040",
+  "primaryTargetBoard": "KB2040",
+  "tags": ["RP2040", "サンプル"],
+  "dataEntries": [
+    {
+      "marker": "PINDEFS",
+      "items": [{ "key": "board_led_type", "dataKind": "u8", "dataCount": 1 }]
+    }
+  ],
+  "editUiItems": [
+    {
+      "key": "board_led_type",
+      "label": "ボードLED",
+      "instructionLines": [
+        "0:なし",
+        "1:RPiPico",
+        "2:KB2040",
+        "3:Xiao RP2040",
+        "4:RP2040-Zero",
+        "5:Tiny2040",
+        "6:ProMicro RP2040"
+      ]
+    }
+  ]
+}
