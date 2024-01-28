@@ -1,0 +1,32 @@
+{
+  "projectGuid": "a7fbf961-5300-454c-bbd8-f460a8af098d",
+  "projectName": "Kermite 標準ファームウェア(移植版/一体型)",
+  "introductionLines": ["Kermiteの標準ファームウェアを移植したものです。"],
+  "targetMcu": "RP2040",
+  "primaryTargetBoard": "KB2040",
+  "tags": ["Kermite", "RP2040", "標準ファームウェア"],
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/kermite_rp_unified",
+  "thumbnailUrl": "https://i.imgur.com/KoEmj0H.png",
+  "dataEntries": [
+    {
+      "marker": "FIRMIX_STATIC_PARAMS",
+      "items": [
+        { "key": "keyboard_name", "dataKind": "vl_text", "textCapacity": 16 },
+        {
+          "key": "board_led_type",
+          "dataKind": "u8",
+          "dataCount": 1,
+          "fallbackValues": [0]
+        },
+        { "key": "vl_pin_columns", "dataKind": "vl_pins", "pinsCapacity": 16 },
+        { "key": "vl_pin_rows", "dataKind": "vl_pins", "pinsCapacity": 16 }
+      ]
+    }
+  ],
+  "editUiItems": [
+    { "key": "keyboard_name", "label": "キーボード名" },
+    { "key": "board_led_type", "label": "ボードLED" },
+    { "key": "vl_pin_columns", "label": "キーマトリクス列" },
+    { "key": "vl_pin_rows", "label": "キーマトリクス行" }
+  ]
+}
