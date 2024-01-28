@@ -3,9 +3,9 @@
 #include <kpm/BoardLED.h>
 #include <kpm/BoardLED_Dummy.h>
 #include <kpm/BoardLED_NeoPixel.h>
-#include <kpm/KeyMatrix.h>
 #include <kpm/KeyScanner_DirectWired.h>
 #include <kpm/KeyScanner_Dummy.h>
+#include <kpm/KeyScanner_KeyMatrix.h>
 
 typedef struct {
   char marker[21];
@@ -40,7 +40,8 @@ static void setupModules() {
   if (numColumns > 0 && numRows > 0) {
     auto *pinColumns = (const uint8_t *)firmixParams.vlPinColumns + 1;
     auto *pinRows = (const uint8_t *)firmixParams.vlPinRows + 1;
-    keyMatrix = new KeyMatrix(pinColumns, pinRows, numColumns, numRows);
+    keyMatrix =
+        new KeyScanner_KeyMatrix(pinColumns, pinRows, numColumns, numRows);
     keyMatrix->setKeyIndexBase(keyIndexBase);
     keyIndexBase += numColumns * numRows;
   } else {
