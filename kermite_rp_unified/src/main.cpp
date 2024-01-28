@@ -4,6 +4,7 @@
 #include <kpm/BoardLED_Dummy.h>
 #include <kpm/BoardLED_NeoPixel.h>
 #include <kpm/KeyMatrix.h>
+#include <kpm/KeyScanner_Dummy.h>
 
 typedef struct {
   char marker[21];
@@ -22,8 +23,8 @@ volatile static const FirmixParams firmixParams = {
 };
 
 static KermiteCore kermite;
-static KeyMatrix *keyMatrix = nullptr;
-static IBoardLED *boardLED = nullptr;
+static IKeyScanner *keyMatrix;
+static IBoardLED *boardLED;
 
 static void setupModules() {
   int boardLedType = firmixParams.boardLedType;
@@ -31,10 +32,13 @@ static void setupModules() {
   int numRows = firmixParams.vlPinRows[0];
 
   if (numColumns > 0 && numRows > 0) {
-    uint8_t *pinColumns = (uint8_t *)(&firmixParams.vlPinColumns[1]);
-    uint8_t *pinRows = (uint8_t *)(&firmixParams.vlPinRows[1]);
+    auto *pinColumns = (const uint8_t *)firmixParams.vlPinColumns + 1;
+    auto *pinRows = (const uint8_t *)firmixParams.vlPinRows + 1;
     keyMatrix = new KeyMatrix(pinColumns, pinRows, numColumns, numRows);
+  } else {
+    keyMatrix = new KeyScanner_Dummy();
   }
+
   if (boardLedType == 1) {
     boardLED = new BoardLED(25, 25); // pico
   } else if (boardLedType == 2) {
@@ -63,11 +67,8 @@ static void handleKeyStateChange(int keyIndex, bool pressed) {
 void setup() {
   setupModules();
   boardLED->initialize();
-
-  if (keyMatrix) {
-    keyMatrix->setKeyStateListener(handleKeyStateChange);
-    keyMatrix->initialize();
-  }
+  keyMatrix->setKeyStateListener(handleKeyStateChange);
+  keyMatrix->initialize();
 
   if (firmixParams.keyboardName[0] != '\0') {
     kermite.setKeyboardName((const char *)firmixParams.keyboardName);
@@ -75,6 +76,7 @@ void setup() {
     kermite.setKeyboardName("mykeeb");
   }
 
+  kermite.setProductionMode();
   kermite.begin();
 }
 
@@ -82,9 +84,7 @@ void loop() {
   static int count = 0;
   boardLED->write(0, count % 1000 == 0);
   if (count % 10 == 0) {
-    if (keyMatrix) {
-      keyMatrix->updateInput();
-    }
+    keyMatrix->updateInput();
   }
   kermite.processUpdate();
   count++;
