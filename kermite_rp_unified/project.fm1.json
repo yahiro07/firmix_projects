@@ -1,7 +1,7 @@
 {
   "projectGuid": "a7fbf961-5300-454c-bbd8-f460a8af098d",
   "projectName": "Kermite 汎用ファームウェア(一体型)",
-  "introductionLines": ["Kermiteの汎用ファームウェアを移植したものです。"],
+  "introductionLines": ["Kermiteの標準ファームウェアを移植したものです。"],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
   "tags": ["Kermite", "RP2040"],
