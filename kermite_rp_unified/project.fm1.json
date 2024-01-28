@@ -19,7 +19,12 @@
           "fallbackValues": [0]
         },
         { "key": "vl_pin_columns", "dataKind": "vl_pins", "pinsCapacity": 16 },
-        { "key": "vl_pin_rows", "dataKind": "vl_pins", "pinsCapacity": 16 }
+        { "key": "vl_pin_rows", "dataKind": "vl_pins", "pinsCapacity": 16 },
+        {
+          "key": "vl_pins_direct_wired",
+          "dataKind": "vl_pins",
+          "pinsCapacity": 16
+        }
       ]
     }
   ],
@@ -27,6 +32,7 @@
     { "key": "keyboard_name", "label": "キーボード名" },
     { "key": "board_led_type", "label": "ボードLED" },
     { "key": "vl_pin_columns", "label": "キーマトリクス列" },
-    { "key": "vl_pin_rows", "label": "キーマトリクス行" }
+    { "key": "vl_pin_rows", "label": "キーマトリクス行" },
+    { "key": "vl_pins_direct_wired", "label": "直接配線キー" }
   ]
 }
