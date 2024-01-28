@@ -1,12 +1,12 @@
 {
   "projectGuid": "a7fbf961-5300-454c-bbd8-f460a8af098d",
-  "projectName": "Kermite 標準ファームウェア(移植版/一体型)",
-  "introductionLines": ["Kermiteの標準ファームウェアを移植したものです。"],
+  "projectName": "Kermite 汎用ファームウェア(一体型)",
+  "introductionLines": ["Kermiteの汎用ファームウェアを移植したものです。"],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
-  "tags": ["Kermite", "RP2040", "標準ファームウェア"],
+  "tags": ["Kermite", "RP2040"],
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/kermite_rp_unified",
-  "thumbnailUrl": "https://i.imgur.com/KoEmj0H.png",
+  "thumbnailUrl": "https://i.imgur.com/HUEVDKY.png",
   "dataEntries": [
     {
       "marker": "FIRMIX_STATIC_PARAMS",
