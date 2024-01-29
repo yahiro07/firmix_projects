@@ -1,12 +1,10 @@
 #include <Arduino.h>
 #include <KermiteCore.h>
-#include <kpm/BoardLED.h>
-#include <kpm/BoardLED_Dummy.h>
-#include <kpm/BoardLED_NeoPixel.h>
 #include <kpm/KeyScanner_DirectWired.h>
 #include <kpm/KeyScanner_Dummy.h>
 #include <kpm/KeyScanner_Encoders.h>
 #include <kpm/KeyScanner_KeyMatrix.h>
+#include <kxl/BoardLED_Kermite.h>
 
 typedef struct {
   char marker[21];
@@ -32,7 +30,7 @@ static KermiteCore kermite;
 static IKeyScanner *keyMatrix;
 static IKeyScanner *keyScannerDw;
 static IKeyScanner *encodersScanner;
-static IBoardLED *boardLED;
+static BoardLED_Kermite *boardLED;
 
 static void setupModules() {
   int boardLedType = firmixParams.boardLedType;
@@ -70,21 +68,7 @@ static void setupModules() {
     encodersScanner = new KeyScanner_Dummy();
   }
 
-  if (boardLedType == 1) {
-    boardLED = new BoardLED(25, 25); // pico
-  } else if (boardLedType == 2) {
-    boardLED = new BoardLED_NeoPixel(17, 0x40); // kb2040
-  } else if (boardLedType == 3) {
-    boardLED = new BoardLED_NeoPixel(12, 0x40, 11); // xiao rp2040
-  } else if (boardLedType == 4) {
-    boardLED = new BoardLED_NeoPixel(16, 0x40); // rp2040-zero
-  } else if (boardLedType == 5) {
-    boardLED = new BoardLED(18, 19, 20, true); // tiny2040
-  } else if (boardLedType == 6) {
-    boardLED = new BoardLED_NeoPixel(25, 0x40); // promicro rp2040
-  } else {
-    boardLED = new BoardLED_Dummy();
-  }
+  boardLED = new BoardLED_Kermite(boardLedType);
 }
 
 static int pressedKeyCount = 0;
@@ -97,7 +81,7 @@ static void handleKeyStateChange(int keyIndex, bool pressed) {
 
 void setup() {
   setupModules();
-  boardLED->initialize();
+  boardLED->initialize(kermite);
   keyMatrix->setKeyStateListener(handleKeyStateChange);
   keyMatrix->initialize();
   keyScannerDw->setKeyStateListener(handleKeyStateChange);
