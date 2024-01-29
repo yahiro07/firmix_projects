@@ -53,7 +53,7 @@ static void boardIndicator_write(int inputIndex, bool value) {
 static void handleKeySlotStateChange(uint8_t slotIndex, bool isDown) {
   pressedKeyCount += isDown ? 1 : -1;
   if (optionAffectKeyHoldStateToLed) {
-    boardIndicator_write(3, pressedKeyCount > 0);
+    boardIndicator_write(5, pressedKeyCount > 0);
   }
 }
 
