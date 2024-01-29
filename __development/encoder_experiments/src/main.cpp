@@ -10,7 +10,7 @@ private:
   int keyIndexBase = 0;
   KeyStateListenerFn keyStateListener = nullptr;
   int count = 0;
-  int outputHoldKeyIndex = 0;
+  int outputHoldKeyIndex = -1;
 
 public:
   EncoderWrapper(int pin) {
@@ -23,10 +23,10 @@ public:
   void updateInput() {
     if (!keyStateListener)
       return;
-    if (outputHoldKeyIndex) {
+    if (outputHoldKeyIndex != -1) {
       // キー状態出力中ならそれを解除
       keyStateListener(outputHoldKeyIndex, false);
-      outputHoldKeyIndex = 0;
+      outputHoldKeyIndex = -1;
     } else {
       // カウントを読み取ってキー状態を出力
       int nextCount = pioEncoder->getCount();

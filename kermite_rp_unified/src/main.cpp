@@ -5,6 +5,7 @@
 #include <kpm/BoardLED_NeoPixel.h>
 #include <kpm/KeyScanner_DirectWired.h>
 #include <kpm/KeyScanner_Dummy.h>
+#include <kpm/KeyScanner_Encoders.h>
 #include <kpm/KeyScanner_KeyMatrix.h>
 
 typedef struct {
@@ -14,6 +15,7 @@ typedef struct {
   uint8_t vlPinColumns[17];
   uint8_t vlPinRows[17];
   uint8_t vlPinsDirectWired[17];
+  uint8_t vlPinsEncoders[7];
 } FirmixParams;
 
 volatile static const FirmixParams firmixParams = {
@@ -23,11 +25,13 @@ volatile static const FirmixParams firmixParams = {
     .vlPinColumns = {0},
     .vlPinRows = {0},
     .vlPinsDirectWired = {0},
+    .vlPinsEncoders = {0},
 };
 
 static KermiteCore kermite;
 static IKeyScanner *keyMatrix;
 static IKeyScanner *keyScannerDw;
+static IKeyScanner *encodersScanner;
 static IBoardLED *boardLED;
 
 static void setupModules() {
@@ -35,6 +39,7 @@ static void setupModules() {
   int numColumns = firmixParams.vlPinColumns[0];
   int numRows = firmixParams.vlPinRows[0];
   int numDirectWiredPins = firmixParams.vlPinsDirectWired[0];
+  int numEncoderPins = firmixParams.vlPinsEncoders[0];
 
   int keyIndexBase = 0;
   if (numColumns > 0 && numRows > 0) {
@@ -54,6 +59,15 @@ static void setupModules() {
     keyIndexBase += numDirectWiredPins;
   } else {
     keyScannerDw = new KeyScanner_Dummy();
+  }
+
+  if (numEncoderPins) {
+    auto pins = (const uint8_t *)firmixParams.vlPinsEncoders + 1;
+    encodersScanner = new KeyScanner_Encoders(numEncoderPins, pins);
+    encodersScanner->setKeyIndexBase(keyIndexBase);
+    keyIndexBase += numEncoderPins;
+  } else {
+    encodersScanner = new KeyScanner_Dummy();
   }
 
   if (boardLedType == 1) {
@@ -88,6 +102,8 @@ void setup() {
   keyMatrix->initialize();
   keyScannerDw->setKeyStateListener(handleKeyStateChange);
   keyScannerDw->initialize();
+  encodersScanner->setKeyStateListener(handleKeyStateChange);
+  encodersScanner->initialize();
 
   if (firmixParams.keyboardName[0] != '\0') {
     kermite.setKeyboardName((const char *)firmixParams.keyboardName);
@@ -105,6 +121,7 @@ void loop() {
   if (count % 10 == 0) {
     keyMatrix->updateInput();
     keyScannerDw->updateInput();
+    encodersScanner->updateInput();
   }
   kermite.processUpdate();
   count++;
