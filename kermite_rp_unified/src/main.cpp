@@ -4,7 +4,7 @@
 #include <kpm/KeyScanner_Dummy.h>
 #include <kpm/KeyScanner_Encoders.h>
 #include <kpm/KeyScanner_KeyMatrix.h>
-#include <kxl/BoardLED_Kermite.h>
+#include <kxl/KermiteBoardIndicator.h>
 
 typedef struct {
   char marker[21];
@@ -30,7 +30,7 @@ static KermiteCore kermite;
 static IKeyScanner *keyMatrix;
 static IKeyScanner *keyScannerDw;
 static IKeyScanner *encodersScanner;
-static BoardLED_Kermite *boardLED;
+static KermiteBoardIndicator *boardIndicator;
 
 static void setupModules() {
   int boardLedType = firmixParams.boardLedType;
@@ -68,20 +68,18 @@ static void setupModules() {
     encodersScanner = new KeyScanner_Dummy();
   }
 
-  boardLED = new BoardLED_Kermite(boardLedType);
+  boardIndicator = new KermiteBoardIndicator(boardLedType);
 }
 
 static int pressedKeyCount = 0;
 
 static void handleKeyStateChange(int keyIndex, bool pressed) {
   kermite.feedKeyState(keyIndex, pressed);
-  pressedKeyCount += (pressed ? 1 : -1);
-  boardLED->write(1, pressedKeyCount > 0);
 }
 
 void setup() {
   setupModules();
-  boardLED->initialize(kermite);
+  boardIndicator->initialize();
   keyMatrix->setKeyStateListener(handleKeyStateChange);
   keyMatrix->initialize();
   keyScannerDw->setKeyStateListener(handleKeyStateChange);
@@ -101,12 +99,12 @@ void setup() {
 
 void loop() {
   static int count = 0;
-  boardLED->write(0, count % 1000 == 0);
   if (count % 10 == 0) {
     keyMatrix->updateInput();
     keyScannerDw->updateInput();
     encodersScanner->updateInput();
   }
+  boardIndicator->update();
   kermite.processUpdate();
   count++;
   delay(1);
