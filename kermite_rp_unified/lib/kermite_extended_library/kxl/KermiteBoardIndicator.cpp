@@ -19,10 +19,10 @@ states[1] || states[4] --> G
 states[2] || states[5] --> B
 */
 static bool states[6] = {false};
+
 static int pressedKeyCount = 0;
 
 // 動的に変更可能なオプション
-static bool optionEmitRealtimeEvents = true;
 static bool optionAffectKeyHoldStateToLed = true;
 static bool optionUseHeartbeatLed = true;
 
