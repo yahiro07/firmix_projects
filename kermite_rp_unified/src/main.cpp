@@ -1,5 +1,6 @@
 #include "Arduino.h"
 #include "KermiteCore.h"
+#include "OledDisplay.h"
 #include "kpm/KeyScanner_DirectWired.h"
 #include "kpm/KeyScanner_Dummy.h"
 #include "kpm/KeyScanner_Encoders.h"
@@ -11,12 +12,13 @@ typedef struct {
   char marker[21];
   char keyboardName[17];
   uint8_t boardLedType;
-  uint8_t vlPinColumns[17];
-  uint8_t vlPinRows[17];
-  uint8_t vlPinsDirectWired[17];
-  uint8_t vlPinsEncoders[7];
-  uint8_t rgbLightingPin;
+  int8_t vlPinColumns[17];
+  int8_t vlPinRows[17];
+  int8_t vlPinsDirectWired[17];
+  int8_t vlPinsEncoders[7];
+  int8_t rgbLightingPin;
   uint8_t rgbLightingNumLeds;
+  int8_t pinsOledI2C[2];
 } FirmixParams;
 
 volatile static const FirmixParams firmixParams = {
@@ -27,6 +29,9 @@ volatile static const FirmixParams firmixParams = {
     .vlPinRows = {0},
     .vlPinsDirectWired = {0},
     .vlPinsEncoders = {0},
+    .rgbLightingPin = -1,
+    .rgbLightingNumLeds = 0,
+    .pinsOledI2C = {-1, -1},
 };
 
 static KermiteCore kermite;
@@ -35,6 +40,7 @@ static IKeyScanner *keyScannerDw;
 static IKeyScanner *encodersScanner;
 static BoardIndicator *boardIndicator;
 static RgbLighting *rgbLighting;
+static OledDisplay *oledDisplay;
 
 static void setupModules() {
   int boardLedType = firmixParams.boardLedType;
@@ -76,6 +82,8 @@ static void setupModules() {
 
   rgbLighting = new RgbLighting(firmixParams.rgbLightingPin,
                                 firmixParams.rgbLightingNumLeds);
+  oledDisplay =
+      new OledDisplay(firmixParams.pinsOledI2C[0], firmixParams.pinsOledI2C[1]);
 }
 
 static int pressedKeyCount = 0;
@@ -94,6 +102,7 @@ void setup() {
   encodersScanner->setKeyStateListener(handleKeyStateChange);
   encodersScanner->initialize();
   rgbLighting->initialize();
+  oledDisplay->initialize();
 
   if (firmixParams.keyboardName[0] != '\0') {
     kermite.setKeyboardName((const char *)firmixParams.keyboardName);
@@ -114,6 +123,7 @@ void loop() {
   }
   boardIndicator->update();
   rgbLighting->update();
+  oledDisplay->update();
   kermite.processUpdate();
   count++;
   delay(1);
