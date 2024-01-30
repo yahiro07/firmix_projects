@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "KermiteCore.h"
+#include "km1/KermiteCore.h"
 #include "kpm/KeyScanner_DirectWired.h"
 #include "kpm/KeyScanner_Dummy.h"
 #include "kpm/KeyScanner_Encoders.h"
