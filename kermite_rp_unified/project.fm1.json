@@ -25,7 +25,14 @@
           "dataKind": "vl_pins",
           "pinsCapacity": 16
         },
-        { "key": "vl_pins_encoders", "dataKind": "vl_pins", "pinsCapacity": 6 }
+        { "key": "vl_pins_encoders", "dataKind": "vl_pins", "pinsCapacity": 6 },
+        { "key": "rgb_lighting_pin", "dataKind": "pins", "pinsCount": 1 },
+        {
+          "key": "rgb_lighting_num_leds",
+          "dataKind": "u8",
+          "dataCount": 1,
+          "fallbackValues": [0]
+        }
       ]
     }
   ],
@@ -35,6 +42,8 @@
     { "key": "vl_pin_columns", "label": "キーマトリクス列" },
     { "key": "vl_pin_rows", "label": "キーマトリクス行" },
     { "key": "vl_pins_direct_wired", "label": "直接配線キー" },
-    { "key": "vl_pins_encoders", "label": "ロータリーエンコーダ" }
+    { "key": "vl_pins_encoders", "label": "ロータリーエンコーダ" },
+    { "key": "rgb_lighting_pin", "label": "ライティング/ピン" },
+    { "key": "rgb_lighting_num_leds", "label": "ライティング/LED数" }
   ]
 }

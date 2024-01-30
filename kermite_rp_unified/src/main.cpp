@@ -1,10 +1,11 @@
+#include "KermiteBoardIndicator.h"
+#include "RgbLighting.h"
 #include <Arduino.h>
 #include <KermiteCore.h>
 #include <kpm/KeyScanner_DirectWired.h>
 #include <kpm/KeyScanner_Dummy.h>
 #include <kpm/KeyScanner_Encoders.h>
 #include <kpm/KeyScanner_KeyMatrix.h>
-#include <kxl/KermiteBoardIndicator.h>
 
 typedef struct {
   char marker[21];
@@ -14,6 +15,8 @@ typedef struct {
   uint8_t vlPinRows[17];
   uint8_t vlPinsDirectWired[17];
   uint8_t vlPinsEncoders[7];
+  uint8_t rgbLightingPin;
+  uint8_t rgbLightingNumLeds;
 } FirmixParams;
 
 volatile static const FirmixParams firmixParams = {
@@ -31,6 +34,7 @@ static IKeyScanner *keyMatrix;
 static IKeyScanner *keyScannerDw;
 static IKeyScanner *encodersScanner;
 static KermiteBoardIndicator *boardIndicator;
+static RgbLighting *rgbLighting;
 
 static void setupModules() {
   int boardLedType = firmixParams.boardLedType;
@@ -69,6 +73,9 @@ static void setupModules() {
   }
 
   boardIndicator = new KermiteBoardIndicator(boardLedType);
+
+  rgbLighting = new RgbLighting(firmixParams.rgbLightingPin,
+                                firmixParams.rgbLightingNumLeds);
 }
 
 static int pressedKeyCount = 0;
@@ -86,6 +93,7 @@ void setup() {
   keyScannerDw->initialize();
   encodersScanner->setKeyStateListener(handleKeyStateChange);
   encodersScanner->initialize();
+  rgbLighting->initialize();
 
   if (firmixParams.keyboardName[0] != '\0') {
     kermite.setKeyboardName((const char *)firmixParams.keyboardName);
@@ -105,6 +113,7 @@ void loop() {
     encodersScanner->updateInput();
   }
   boardIndicator->update();
+  rgbLighting->update();
   kermite.processUpdate();
   count++;
   delay(1);
