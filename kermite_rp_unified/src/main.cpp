@@ -1,11 +1,11 @@
-#include "KermiteBoardIndicator.h"
-#include "RgbLighting.h"
-#include <Arduino.h>
-#include <KermiteCore.h>
-#include <kpm/KeyScanner_DirectWired.h>
-#include <kpm/KeyScanner_Dummy.h>
-#include <kpm/KeyScanner_Encoders.h>
-#include <kpm/KeyScanner_KeyMatrix.h>
+#include "Arduino.h"
+#include "KermiteCore.h"
+#include "kpm/KeyScanner_DirectWired.h"
+#include "kpm/KeyScanner_Dummy.h"
+#include "kpm/KeyScanner_Encoders.h"
+#include "kpm/KeyScanner_KeyMatrix.h"
+#include "kxe/BoardIndicator.h"
+#include "kxe/RgbLighting.h"
 
 typedef struct {
   char marker[21];
@@ -33,7 +33,7 @@ static KermiteCore kermite;
 static IKeyScanner *keyMatrix;
 static IKeyScanner *keyScannerDw;
 static IKeyScanner *encodersScanner;
-static KermiteBoardIndicator *boardIndicator;
+static BoardIndicator *boardIndicator;
 static RgbLighting *rgbLighting;
 
 static void setupModules() {
@@ -72,7 +72,7 @@ static void setupModules() {
     encodersScanner = new KeyScanner_Dummy();
   }
 
-  boardIndicator = new KermiteBoardIndicator(boardLedType);
+  boardIndicator = new BoardIndicator(boardLedType);
 
   rgbLighting = new RgbLighting(firmixParams.rgbLightingPin,
                                 firmixParams.rgbLightingNumLeds);
