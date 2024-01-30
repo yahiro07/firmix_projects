@@ -1,11 +1,11 @@
 #include "Arduino.h"
 #include "KermiteCore.h"
-#include "OledDisplay.h"
 #include "kpm/KeyScanner_DirectWired.h"
 #include "kpm/KeyScanner_Dummy.h"
 #include "kpm/KeyScanner_Encoders.h"
 #include "kpm/KeyScanner_KeyMatrix.h"
 #include "kxe/BoardIndicator.h"
+#include "kxe/OledDisplay.h"
 #include "kxe/RgbLighting.h"
 
 typedef struct {
