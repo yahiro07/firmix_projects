@@ -17,12 +17,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache@v3
         with:
           path: |
             ~/.cache/pip
             ~/.platformio/.cache
           key: ${{ runner.os }}-pio
+
       - uses: actions/setup-python@v4
         with:
           python-version: "3.9"
@@ -38,11 +39,3 @@ jobs:
             -F readme=@./readme.md -F metadata=@./project.fm1.json \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
             https://firmix.deno.dev/api/project/upload
-
-      - uses: actions/cache/save@v3
-        if: always()
-        with:
-          path: |
-            ~/.cache/pip
-            ~/.platformio/.cache
-          key: ${{ runner.os }}-pio
