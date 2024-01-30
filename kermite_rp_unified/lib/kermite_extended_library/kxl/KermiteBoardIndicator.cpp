@@ -1,12 +1,11 @@
 #include "KermiteBoardIndicator.h"
-#include <Arduino.h>
-#include <kpm/BoardLED.h>
-#include <kpm/BoardLED_Dummy.h>
-#include <kpm/BoardLED_NeoPixel.h>
-
-#include <km1/domain/commandDefinitions.h>
-#include <km1/domain/configManager.h>
-#include <km1/domain/keyboardMain.h>
+#include "Arduino.h"
+#include "km1/domain/commandDefinitions.h"
+#include "km1/domain/configManager.h"
+#include "km1/domain/keyboardMain.h"
+#include "kpm/BoardLED.h"
+#include "kpm/BoardLED_Dummy.h"
+#include "kpm/BoardLED_NeoPixel.h"
 
 static IBoardLED *boardLED;
 

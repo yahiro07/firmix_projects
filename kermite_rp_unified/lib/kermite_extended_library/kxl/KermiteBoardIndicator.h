@@ -1,6 +1,4 @@
 #pragma once
-#include <KermiteCore.h>
-#include <kpm/IBoardLED.h>
 
 class KermiteBoardIndicator {
 public:
