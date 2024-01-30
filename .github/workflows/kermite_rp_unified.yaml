@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache@v3
         with:
           path: |
             ~/.cache/pip
@@ -33,16 +33,9 @@ jobs:
         run: pio run
 
       - name: Upload to Firmix
+        continue-on-error: true
         run: |
-          curl -X POST -H "Authorization: token ${{secrets.FIRMIX_TOKEN}}" \
+          curl --fail-with-body -X POST -H "Authorization: token ${{secrets.FIRMIX_TOKEN}}" \
             -F readme=@./readme.md -F metadata=@./project.fm1.json \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
             https://firmix.deno.dev/api/project/upload
-
-      - uses: actions/cache/save@v3
-        if: always()
-        with:
-          path: |
-            ~/.cache/pip
-            ~/.platformio/.cache
-          key: ${{ runner.os }}-pio
