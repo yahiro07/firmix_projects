@@ -31,15 +31,7 @@
     }
   ],
   "editUiItems": [
-    {
-      "key": "pin_leds",
-      "label": "LEDのピン",
-      "instruction": "LEDは抵抗を介してGNDにつないでください"
-    },
-    {
-      "key": "pin_button",
-      "label": "ボタンのピン",
-      "instruction": "スイッチを介してGNDにつないでください"
-    }
+    { "key": "pin_leds", "label": "LEDのピン" },
+    { "key": "pin_button", "label": "ボタンのピン" }
   ]
 }
