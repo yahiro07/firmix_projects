@@ -1,0 +1,45 @@
+{
+  "projectGuid": "8a23b7fd-c462-43ca-9a31-263c4764991a",
+  "projectName": "LED出力サンプル",
+  "thumbnailUrl": "https://i.imgur.com/as7Iity.jpeg",
+  "introductionLines": [
+    "スイッチを押すとLEDが光ります",
+    "LED1 点滅します",
+    "LED2 スイッチの状態をオン状態に反映します。"
+  ],
+  "targetMcu": "RP2040",
+  "primaryTargetBoard": "WaveShare RP2040 Zero",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink",
+  "tags": ["RP2040", "サンプル"],
+  "dataEntries": [
+    {
+      "marker": "PINDEFS",
+      "items": [
+        {
+          "key": "pin_leds",
+          "dataKind": "pins",
+          "pinsCount": 2,
+          "required": true
+        },
+        {
+          "key": "pin_button",
+          "dataKind": "pins",
+          "pinsCount": 1,
+          "required": true
+        }
+      ]
+    }
+  ],
+  "editUiItems": [
+    {
+      "key": "pin_leds",
+      "label": "LEDのピン",
+      "instruction": "LEDは抵抗を介してGNDにつないでください"
+    },
+    {
+      "key": "pin_button",
+      "label": "ボタンのピン",
+      "instruction": "スイッチを介してGNDにつないでください"
+    }
+  ]
+}
