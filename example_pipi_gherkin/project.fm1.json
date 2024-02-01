@@ -1,0 +1,14 @@
+{
+  "projectGuid": "DBB02917-6B1A-4357-BA71-2FCB80AFF5A1",
+  "projectName": "ファームウェアサンプル PiPi Gherkin",
+  "introductionLines": [
+    "Kermiteで利用できる、PiPi Gherkinのファームウェアです"
+  ],
+  "targetMcu": "RP2040",
+  "primaryTargetBoard": "KB2040",
+  "tags": ["Kermite", "RP2040"],
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/example_unified_keyboard",
+  "thumbnailUrl": "https://i.imgur.com/gsh9Wor.jpeg",
+  "dataEntries": [],
+  "editUiItems": []
+}
