@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "KermiteCore.h"
+#include "km1/KermiteCore.h"
 #include "kpm/BoardLED.h"
 #include "kpm/BoardLED_Dummy.h"
 #include "kpm/BoardLED_NeoPixel.h"
