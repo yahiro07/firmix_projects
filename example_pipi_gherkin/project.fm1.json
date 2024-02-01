@@ -7,7 +7,7 @@
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
   "tags": ["Kermite", "RP2040"],
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/example_unified_keyboard",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/example_pipi_gherkin",
   "thumbnailUrl": "https://i.imgur.com/gsh9Wor.jpeg",
   "dataEntries": [],
   "editUiItems": []
