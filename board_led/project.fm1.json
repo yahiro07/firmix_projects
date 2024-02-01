@@ -13,23 +13,16 @@
   "dataEntries": [
     {
       "marker": "PINDEFS",
-      "items": [{ "key": "board_led_type", "dataKind": "u8", "dataCount": 1 }]
-    }
-  ],
-  "editUiItems": [
-    {
-      "key": "board_led_type",
-      "label": "ボードLED",
-      "instructionLines": [
-        "0:なし",
-        "1:RPiPico",
-        "2:KB2040",
-        "3:Xiao RP2040",
-        "4:RP2040-Zero",
-        "5:Tiny2040",
-        "6:ProMicro RP2040"
+      "items": [
+        {
+          "key": "board_led_type",
+          "dataKind": "u8",
+          "dataCount": 1,
+          "required": true
+        }
       ]
     }
   ],
+  "editUiItems": [{ "key": "board_led_type", "label": "ボードLED" }],
   "__debug_revision": 2
 }

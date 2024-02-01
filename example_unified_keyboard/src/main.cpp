@@ -1,9 +1,9 @@
-#include <Arduino.h>
-#include <KermiteCore.h>
-#include <kpm/BoardLED.h>
-#include <kpm/BoardLED_Dummy.h>
-#include <kpm/BoardLED_NeoPixel.h>
-#include <kpm/KeyMatrix.h>
+#include "Arduino.h"
+#include "KermiteCore.h"
+#include "kpm/BoardLED.h"
+#include "kpm/BoardLED_Dummy.h"
+#include "kpm/BoardLED_NeoPixel.h"
+#include "kpm/KeyScanner_KeyMatrix.h"
 
 typedef struct {
   const char marker[8];
@@ -20,7 +20,7 @@ volatile static const Stencil stencil = {
 };
 
 static KermiteCore kermite;
-static KeyMatrix *keyMatrix;
+static KeyScanner_KeyMatrix *keyMatrix;
 static IBoardLED *boardLED;
 
 static void setupModules() {
@@ -30,7 +30,8 @@ static void setupModules() {
   uint8_t *pinColumns = (uint8_t *)(&stencil.vl_pin_columns[1]);
   uint8_t *pinRows = (uint8_t *)(&stencil.vl_pin_rows[1]);
 
-  keyMatrix = new KeyMatrix(pinColumns, pinRows, numColumns, numRows);
+  keyMatrix =
+      new KeyScanner_KeyMatrix(pinColumns, pinRows, numColumns, numRows);
   if (boardLedType == 1) {
     boardLED = new BoardLED(25, 25); // pico
   } else if (boardLedType == 2) {
