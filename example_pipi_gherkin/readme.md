@@ -1,5 +1,7 @@
 # PiPi Gherkin
 
+## 概要
+
 カスタムファームウェアのサンプルとして、PiPi Gherkinで動作するものを作りました。
 
 ![](https://i.imgur.com/gsh9Wor.jpeg)
