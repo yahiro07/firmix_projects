@@ -3,9 +3,7 @@
   "projectName": "LED出力サンプル",
   "thumbnailUrl": "https://i.imgur.com/as7Iity.jpeg",
   "introductionLines": [
-    "スイッチを押すとLEDが光ります",
-    "LED1 点滅します",
-    "LED2 スイッチの状態をオン状態に反映します。"
+    "ピンの入出力のサンプルです。スイッチを押すとLEDが光ります"
   ],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "WaveShare RP2040 Zero",
