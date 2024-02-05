@@ -93,6 +93,7 @@ static void handleKeyStateChange(int keyIndex, bool pressed) {
 }
 
 void setup() {
+  rp2040.enableDoubleResetBootloader();
   setupModules();
   boardIndicator->initialize();
   keyMatrix->setKeyStateListener(handleKeyStateChange);
