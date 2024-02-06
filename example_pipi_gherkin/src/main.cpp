@@ -1,4 +1,5 @@
 #include "Arduino.h"
+#include "kermite_fullkit_resolve_ldf.h"
 #include "km1/KermiteCore.h"
 #include "kpm/BoardLED.h"
 #include "kpm/KeyScanner_KeyMatrix.h"
