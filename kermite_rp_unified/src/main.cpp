@@ -86,8 +86,6 @@ static void setupModules() {
       new OledDisplay(firmixParams.pinsOledI2C[0], firmixParams.pinsOledI2C[1]);
 }
 
-static int pressedKeyCount = 0;
-
 static void handleKeyStateChange(int keyIndex, bool pressed) {
   kermite.feedKeyState(keyIndex, pressed);
 }
