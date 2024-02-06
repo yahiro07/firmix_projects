@@ -6,7 +6,7 @@
     "ピンの入出力のサンプルです。スイッチを押すとLEDが光ります"
   ],
   "targetMcu": "RP2040",
-  "primaryTargetBoard": "WaveShare RP2040 Zero",
+  "primaryTargetBoard": "KB2040",
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink",
   "tags": ["RP2040", "サンプル"],
   "dataEntries": [

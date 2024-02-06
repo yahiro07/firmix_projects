@@ -5,7 +5,7 @@
     "Kermiteで利用できる、PiPi Gherkinのファームウェアです"
   ],
   "targetMcu": "RP2040",
-  "primaryTargetBoard": "KB2040",
+  "primaryTargetBoard": "Raspberry Pi Pico",
   "tags": ["Kermite", "RP2040"],
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/example_pipi_gherkin",
   "thumbnailUrl": "https://i.imgur.com/gsh9Wor.jpeg",
