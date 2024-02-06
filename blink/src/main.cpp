@@ -17,6 +17,7 @@ static const int pinLed1 = bucket.pin_leds[1];
 static const int pinButton = bucket.pin_button;
 
 void setup() {
+  rp2040.enableDoubleResetBootloader();
   pinMode(pinLed0, OUTPUT);
   pinMode(pinLed1, OUTPUT);
   pinMode(pinButton, INPUT_PULLUP);
