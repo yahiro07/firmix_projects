@@ -6,7 +6,6 @@
   "primaryTargetBoard": "KB2040",
   "tags": ["Kermite", "RP2040"],
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/kermite_rp_unified",
-  "thumbnailUrl": "https://i.imgur.com/HUEVDKY.png",
   "dataEntries": [
     {
       "marker": "FIRMIX_STATIC_PARAMS",

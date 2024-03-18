@@ -1,7 +1,6 @@
 {
   "projectGuid": "b2bba2fe-6a53-4403-b946-e256d3e92a92",
   "projectName": "BoardLEDサンプル",
-  "thumbnailUrl": "https://i.imgur.com/0arYIcJ.png",
   "introductionLines": [
     "BoardLEDモジュールのサンプルです。",
     "RP2040のマイコンボードに搭載されているLEDをインジケータとして使用します。"
