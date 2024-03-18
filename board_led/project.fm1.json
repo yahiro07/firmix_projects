@@ -8,6 +8,7 @@
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/board_led",
+  "realm": "general",
   "tags": ["RP2040", "サンプル"],
   "dataEntries": [
     {
