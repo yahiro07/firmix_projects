@@ -1,12 +1,16 @@
 {
-  "projectGuid": "a7fbf961-5300-454c-bbd8-f460a8af098d",
+  "projectGuid": "3f646c17-005a-487b-b7d3-779540b61336",
   "projectName": "Kermite 汎用ファームウェア(一体型)",
-  "introductionLines": ["Kermiteの標準ファームウェアを移植したものです。"],
+  "parentProjectGuid": "a7fbf961-5300-454c-bbd8-f460a8af098d",
+  "variationName": "双方向マトリクス対応版",
+  "introductionLines": [
+    "マトリクススキャンを双方向マトリクスに対応した処理に置き換えました。"
+  ],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
   "realm": "keyboard",
   "tags": ["Kermite", "RP2040"],
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/kermite_rp_unified",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/kermite_rp_unified_duplex_matrix",
   "dataEntries": [
     {
       "marker": "FIRMIX_STATIC_PARAMS",
@@ -18,8 +22,8 @@
           "dataCount": 1,
           "fallbackValues": [0]
         },
-        { "key": "vl_pin_columns", "dataKind": "vl_pins", "pinsCapacity": 16 },
-        { "key": "vl_pin_rows", "dataKind": "vl_pins", "pinsCapacity": 16 },
+        { "key": "vl_pin_columns", "dataKind": "vl_pins", "pinsCapacity": 10 },
+        { "key": "vl_pin_rows", "dataKind": "vl_pins", "pinsCapacity": 10 },
         {
           "key": "vl_pins_direct_wired",
           "dataKind": "vl_pins",

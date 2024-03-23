@@ -1,0 +1,41 @@
+name: Publish kermite_rp_unified_duplex_matrix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/kermite_rp_unified_duplex_matrix.yaml"
+      - "kermite_rp_unified_duplex_matrix/**"
+
+defaults:
+  run:
+    working-directory: kermite_rp_unified_duplex_matrix
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+
+      - name: Build PlatformIO Project
+        run: pio run
+
+      - name: Upload to Firmix
+        run: |
+          curl --fail-with-body -X POST -H "Authorization: token ${{secrets.FIRMIX_TOKEN}}" \
+            -F readme=@./readme.md -F metadata=@./project.fm1.json -F thumbnail=@./thumbnail.png \
+            -F firmware=@./.pio/build/generic/firmware.uf2 \
+            https://firmix.deno.dev/api/project/upload
