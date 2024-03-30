@@ -23,6 +23,5 @@
       ]
     }
   ],
-  "editUiItems": [{ "key": "board_led_type", "label": "ボードLED" }],
-  "__debug_revision": 2
+  "editUiItems": [{ "key": "board_led_type", "label": "ボードLED" }]
 }
