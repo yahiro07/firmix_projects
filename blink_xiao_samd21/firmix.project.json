@@ -1,0 +1,19 @@
+{
+  "projectGuid": "8bdfca7c-ab27-4c4f-babb-d757a2eca222",
+  "projectName": "Xiao SAMD21ボード動作確認",
+  "introductionLines": [
+    "ボードの動作確認用のプログラムです。",
+    "ボード上のLEDを点滅させます。"
+  ],
+  "targetMcu": "SAMD21",
+  "primaryTargetBoard": "Seeed Xiao",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_xiao_samd21",
+  "realm": "general",
+  "tags": ["SAMD21", "サンプル"],
+  "dataEntries": [],
+  "editUiItems": [],
+  "firmwareSpec": {
+    "path": ".pio/build/xiao/firmware.bin",
+    "uf2gen_options": { "family": "SAMD21", "base": "0x2000" }
+  }
+}

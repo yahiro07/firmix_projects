@@ -1,0 +1,19 @@
+{
+  "projectGuid": "522abce8-a606-4207-8efd-785ac60f53cf",
+  "projectName": "Xiao ESP32S3 ボード動作確認",
+  "introductionLines": [
+    "ボードの動作確認用のプログラムです。",
+    "ボード上のLEDを点滅させます。"
+  ],
+  "targetMcu": "ESP32S3",
+  "primaryTargetBoard": "Seeed Xiao ESP32S3",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_xiao_esp32s3",
+  "realm": "general",
+  "tags": ["ESP32S3", "サンプル"],
+  "dataEntries": [],
+  "editUiItems": [],
+  "firmwareSpec": {
+    "path": ".pio/build/xiao_esp32s3/firmware.bin",
+    "uf2gen_options": { "family": "ESP32S3", "base": "0x00" }
+  }
+}
