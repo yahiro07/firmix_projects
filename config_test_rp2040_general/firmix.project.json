@@ -6,7 +6,7 @@
   ],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/config_test_rp2040_general",
   "realm": "general",
   "tags": ["RP2040", "サンプル"],
   "dataEntries": [
@@ -31,5 +31,6 @@
   "editUiItems": [
     { "key": "pin_leds", "label": "LEDのピン" },
     { "key": "pin_button", "label": "ボタンのピン" }
-  ]
+  ],
+  "firmwareSpec": { "path": ".pio/build/generic/firmware.uf2" }
 }

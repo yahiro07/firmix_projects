@@ -7,7 +7,7 @@
   ],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/board_led",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_rp2040_general",
   "realm": "general",
   "tags": ["RP2040", "サンプル"],
   "dataEntries": [
@@ -23,5 +23,6 @@
       ]
     }
   ],
-  "editUiItems": [{ "key": "board_led_type", "label": "ボードLED" }]
+  "editUiItems": [{ "key": "board_led_type", "label": "ボードLED" }],
+  "firmwareSpec": { "path": ".pio/build/generic/firmware.uf2" }
 }
