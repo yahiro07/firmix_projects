@@ -1,0 +1,41 @@
+name: Publish blink_xiao_nrf52840
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/blink_xiao_nrf52840.yaml"
+      - "blink_xiao_nrf52840/**"
+
+defaults:
+  run:
+    working-directory: blink_xiao_nrf52840
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+
+      - name: Build PlatformIO Project
+        run: pio run
+
+      - name: Upload to Firmix
+        run: |
+          curl --fail-with-body -X POST -H "Authorization: token ${{secrets.FIRMIX_TOKEN}}" \
+            -F readme=@./readme.md -F thumbnail=@./thumbnail.png \
+            -F project=@./firmix.project.json \
+            -F firmware=@./.pio/build/xiao_ble/firmware.hex \
+            https://firmix.deno.dev/api/project/upload
