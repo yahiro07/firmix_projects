@@ -1,0 +1,20 @@
+{
+  "projectGuid": "670fabf8-d3c2-4d1d-b3c3-e6230d328838",
+  "projectName": "Xiao BLE ボード動作確認",
+  "parentProjectGuid": "b7452e0c-c88f-4aa7-a006-f506cf7f0fcb",
+  "introductionLines": [
+    "ボードの動作確認用のプログラムです。",
+    "ボード上のLEDを点滅させます。"
+  ],
+  "targetMcu": "nRF52840",
+  "primaryTargetBoard": "Seeed Xiao BLE",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_xiao_nrf52840",
+  "realm": "general",
+  "tags": ["nRF52840", "サンプル"],
+  "dataEntries": [],
+  "editUiItems": [],
+  "firmwareSpec": {
+    "path": ".pio/build/xiao_ble/firmware.hex",
+    "uf2gen_options": { "family": "NRF52840" }
+  }
+}

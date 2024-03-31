@@ -1,0 +1,16 @@
+{
+  "projectGuid": "b7452e0c-c88f-4aa7-a006-f506cf7f0fcb",
+  "projectName": "Xiao RP2040 ボード動作確認",
+  "introductionLines": [
+    "ボードの動作確認用のプログラムです。",
+    "ボード上のLEDを点滅させます。"
+  ],
+  "targetMcu": "RP2040",
+  "primaryTargetBoard": "Seeed Xiao RP2040",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_xiao_rp2040",
+  "realm": "general",
+  "tags": ["RP2040", "サンプル"],
+  "dataEntries": [],
+  "editUiItems": [],
+  "firmwareSpec": { "path": ".pio/build/generic/firmware.uf2" }
+}

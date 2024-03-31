@@ -47,5 +47,6 @@
     { "key": "rgb_lighting_pin", "label": "ライティング/ピン" },
     { "key": "rgb_lighting_num_leds", "label": "ライティング/LED数" },
     { "key": "pins_oled_i2c", "label": "OLED I2C ピン" }
-  ]
+  ],
+  "firmwareSpec": { "path": ".pio/build/generic/firmware.uf2" }
 }

@@ -36,6 +36,7 @@ jobs:
       - name: Upload to Firmix
         run: |
           curl --fail-with-body -X POST -H "Authorization: token ${{secrets.FIRMIX_TOKEN}}" \
-            -F readme=@./readme.md -F metadata=@./project.fm1.json -F thumbnail=@./thumbnail.png \
+            -F readme=@./readme.md -F thumbnail=@./thumbnail.png \
+            -F project=@./firmix.project.json -F board=@./firmix.board.json \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
             https://firmix.deno.dev/api/project/upload
