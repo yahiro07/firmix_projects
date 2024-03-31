@@ -1,15 +1,15 @@
-name: Publish board_led
+name: Publish blink_rp2040_general
 
 on:
   push:
     branches: [main]
     paths:
-      - ".github/workflows/board_led.yaml"
-      - "board_led/**"
+      - ".github/workflows/blink_rp2040_general.yaml"
+      - "blink_rp2040_general/**"
 
 defaults:
   run:
-    working-directory: board_led
+    working-directory: blink_rp2040_general
 
 jobs:
   release:
@@ -35,6 +35,6 @@ jobs:
       - name: Upload to Firmix
         run: |
           curl --fail-with-body -X POST -H "Authorization: token ${{secrets.FIRMIX_TOKEN}}" \
-            -F readme=@./readme.md -F metadata=@./project.fm1.json -F thumbnail=@./thumbnail.png \
+            -F readme=@./readme.md -F metadata=@./firmix.project.json -F thumbnail=@./thumbnail.png \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
             https://firmix.deno.dev/api/project/upload
