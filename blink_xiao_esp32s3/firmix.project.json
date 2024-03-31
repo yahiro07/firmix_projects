@@ -1,6 +1,7 @@
 {
   "projectGuid": "522abce8-a606-4207-8efd-785ac60f53cf",
   "projectName": "Xiao ESP32S3 ボード動作確認",
+  "parentProjectGuid": "b7452e0c-c88f-4aa7-a006-f506cf7f0fcb",
   "introductionLines": [
     "ボードの動作確認用のプログラムです。",
     "ボード上のLEDを点滅させます。"

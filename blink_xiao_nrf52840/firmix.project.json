@@ -1,6 +1,7 @@
 {
   "projectGuid": "670fabf8-d3c2-4d1d-b3c3-e6230d328838",
   "projectName": "Xiao BLE ボード動作確認",
+  "parentProjectGuid": "b7452e0c-c88f-4aa7-a006-f506cf7f0fcb",
   "introductionLines": [
     "ボードの動作確認用のプログラムです。",
     "ボード上のLEDを点滅させます。"
