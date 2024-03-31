@@ -9,5 +9,5 @@ void loop() {
   int cc = count % 1000;
   digitalWrite(pin_led, !(cc < 100));
   count++;
-  delay(2);
+  delay(1);
 }
