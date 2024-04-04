@@ -2,7 +2,10 @@
 
 const int pin_led = 13;
 
-void setup() { pinMode(pin_led, OUTPUT); }
+void setup() {
+  Serial.begin(9600); // required for auto-resetting when uploading a new binary
+  pinMode(pin_led, OUTPUT);
+}
 
 void loop() {
   static int count = 0;
