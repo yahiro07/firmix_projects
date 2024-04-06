@@ -1,7 +1,10 @@
 {
   "projectGuid": "7e59a936-6b81-45b1-a454-e208bce2ed7b",
   "projectName": "Astelia",
-  "introductionLines": ["Asteliaのファームウェアです"],
+  "introductionLines": [
+    "一体型の自作キーボードです。",
+    "アクリル板をねじ組みしたケースが特徴です。"
+  ],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "ProMicro RP2040",
   "realm": "keyboard",
