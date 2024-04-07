@@ -3,7 +3,7 @@
   "projectName": "Astelia",
   "introductionLines": [
     "一体型の自作キーボードです。",
-    "アクリル板をねじ組みしたケースが特徴です。"
+    "アクリル板で箱組みしたケースが特徴です。"
   ],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "ProMicro RP2040",
