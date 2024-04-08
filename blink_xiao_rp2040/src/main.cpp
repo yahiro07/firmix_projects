@@ -33,5 +33,5 @@ void loop() {
     putLedColor(0);
   }
   count++;
-  delay(10); // debug
+  delay(1);
 }
