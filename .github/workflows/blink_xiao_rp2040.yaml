@@ -38,4 +38,4 @@ jobs:
             -F readme=@./readme.md -F thumbnail=@./thumbnail.png \
             -F project=@./firmix.project.json \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
-            https://firmix.deno.dev/api/project/upload
+            https://firmix.nector.me/api/project/upload

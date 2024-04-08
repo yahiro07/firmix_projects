@@ -38,4 +38,4 @@ jobs:
             -F readme=@./readme.md -F thumbnail=@./thumbnail.png \
             -F project=@./firmix.project.json \
             -F firmware=@./.pio/build/xiao_esp32s3/firmware.bin \
-            https://firmix.deno.dev/api/project/upload
+            https://firmix.nector.me/api/project/upload

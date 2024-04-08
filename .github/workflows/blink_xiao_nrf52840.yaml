@@ -38,4 +38,4 @@ jobs:
             -F readme=@./readme.md -F thumbnail=@./thumbnail.png \
             -F project=@./firmix.project.json \
             -F firmware=@./.pio/build/xiao_ble/firmware.hex \
-            https://firmix.deno.dev/api/project/upload
+            https://firmix.nector.me/api/project/upload
