@@ -9,7 +9,7 @@
   "primaryTargetBoard": "ProMicro RP2040",
   "realm": "keyboard",
   "tags": ["Kermite", "RP2040"],
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/astelia",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix-kfx/astelia",
   "dataEntries": [],
   "editUiItems": [],
   "firmwareSpec": { "path": ".pio/build/generic/firmware.uf2" }

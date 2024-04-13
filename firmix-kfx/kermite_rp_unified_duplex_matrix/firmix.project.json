@@ -10,7 +10,7 @@
   "primaryTargetBoard": "KB2040",
   "realm": "keyboard",
   "tags": ["Kermite", "RP2040"],
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/kermite_rp_unified_duplex_matrix",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix-kfx/kermite_rp_unified_duplex_matrix",
   "dataEntries": [
     {
       "marker": "FIRMIX_STATIC_PARAMS",

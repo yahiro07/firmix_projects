@@ -5,11 +5,11 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/blink_xiao_nrf52840.yaml"
-      - "blink_xiao_nrf52840/**"
+      - "firmix/blink_xiao_nrf52840/**"
 
 defaults:
   run:
-    working-directory: blink_xiao_nrf52840
+    working-directory: firmix/blink_xiao_nrf52840
 
 jobs:
   release:

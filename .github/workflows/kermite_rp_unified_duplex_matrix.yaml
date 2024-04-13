@@ -5,11 +5,11 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/kermite_rp_unified_duplex_matrix.yaml"
-      - "kermite_rp_unified_duplex_matrix/**"
+      - "firmix-kfx/kermite_rp_unified_duplex_matrix/**"
 
 defaults:
   run:
-    working-directory: kermite_rp_unified_duplex_matrix
+    working-directory: firmix-kfx/kermite_rp_unified_duplex_matrix
 
 jobs:
   release:
@@ -39,4 +39,4 @@ jobs:
             -F readme=@./readme.md -F thumbnail=@./thumbnail.png \
             -F project=@./firmix.project.json -F board=@./firmix.board.json \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
-            https://firmix.nector.me/api/project/upload
+            https://firmix-kfx.nector.me/api/project/upload

@@ -5,11 +5,11 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/config_test_rp2040_general.yaml"
-      - "config_test_rp2040_general/**"
+      - "firmix-kfx/config_test_rp2040_general/**"
 
 defaults:
   run:
-    working-directory: config_test_rp2040_general
+    working-directory: firmix-kfx/config_test_rp2040_general
 
 jobs:
   release:
@@ -38,4 +38,4 @@ jobs:
             -F readme=@./readme.md -F thumbnail=@./thumbnail.jpg \
             -F project=@./firmix.project.json -F board=@./firmix.board.json \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
-            https://firmix.nector.me/api/project/upload
+            https://firmix-kfx.nector.me/api/project/upload

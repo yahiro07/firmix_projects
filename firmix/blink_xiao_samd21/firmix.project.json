@@ -8,7 +8,7 @@
   ],
   "targetMcu": "SAMD21",
   "primaryTargetBoard": "Seeed Xiao",
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_xiao_samd21",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix/blink_xiao_samd21",
   "realm": "general",
   "tags": ["SAMD21", "サンプル"],
   "dataEntries": [],

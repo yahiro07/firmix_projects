@@ -8,7 +8,7 @@
   ],
   "targetMcu": "nRF52840",
   "primaryTargetBoard": "Seeed Xiao BLE",
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_xiao_nrf52840",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix/blink_xiao_nrf52840",
   "realm": "general",
   "tags": ["nRF52840", "サンプル"],
   "dataEntries": [],

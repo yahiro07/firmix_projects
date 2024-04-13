@@ -5,11 +5,11 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/blink_xiao_esp32s3.yaml"
-      - "blink_xiao_esp32s3/**"
+      - "firmix/blink_xiao_esp32s3/**"
 
 defaults:
   run:
-    working-directory: blink_xiao_esp32s3
+    working-directory: firmix/blink_xiao_esp32s3
 
 jobs:
   release:

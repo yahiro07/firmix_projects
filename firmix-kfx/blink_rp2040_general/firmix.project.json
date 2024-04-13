@@ -7,7 +7,7 @@
   ],
   "targetMcu": "RP2040",
   "primaryTargetBoard": "KB2040",
-  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/blink_rp2040_general",
+  "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix-kfx/blink_rp2040_general",
   "realm": "general",
   "tags": ["RP2040", "サンプル"],
   "dataEntries": [
