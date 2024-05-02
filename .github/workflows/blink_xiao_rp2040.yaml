@@ -35,7 +35,7 @@ jobs:
       - name: Upload to Firmix
         run: |
           curl --fail-with-body -X POST -H "Authorization: token ${{secrets.FIRMIX_TOKEN}}" \
-            -F readme=@./readme.md -F thumbnail=@./thumbnail.png \
+            -F readme=@./readme.md -F thumbnail=@./thumbnail.jpg \
             -F project=@./firmix.project.json \
             -F firmware=@./.pio/build/generic/firmware.uf2 \
             https://firmix.nector.me/api/project/upload
