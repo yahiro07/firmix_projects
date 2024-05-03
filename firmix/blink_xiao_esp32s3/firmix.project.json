@@ -7,7 +7,7 @@
     "ボード上のLEDを点滅させます。"
   ],
   "targetMcu": "ESP32S3",
-  "primaryTargetBoard": "Seeed Xiao ESP32S3",
+  "targetBoardLabel": "Seeed Xiao ESP32S3",
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix/blink_xiao_esp32s3",
   "tags": ["ESP32S3", "サンプル"],
   "firmwareSpec": {

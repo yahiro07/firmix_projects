@@ -7,7 +7,7 @@
     "ボード上のLEDを点滅させます。"
   ],
   "targetMcu": "SAMD21",
-  "primaryTargetBoard": "Seeed Xiao",
+  "targetBoardLabel": "Seeed Xiao",
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix/blink_xiao_samd21",
   "tags": ["SAMD21", "サンプル"],
   "firmwareSpec": {

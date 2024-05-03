@@ -3,7 +3,7 @@
   "projectName": "RP2040-GEEK シリアルモニタ",
   "introductionLines": ["RP2040 GEEKで作ったデバッグ用のシリアルモニタです"],
   "targetMcu": "RP2040",
-  "primaryTargetBoard": "Seeed Xiao RP2040",
+  "targetBoardLabel": "RP2040-GEEK",
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix/serial_monitor_rp2040_geek",
   "tags": ["RP2040"],
   "firmwareSpec": { "path": ".pio/build/generic/firmware.uf2" }
