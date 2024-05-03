@@ -3,7 +3,7 @@
   "projectName": "Kermite 汎用ファームウェア(一体型)",
   "introductionLines": ["Kermiteの標準ファームウェアを移植したものです。"],
   "targetMcu": "RP2040",
-  "primaryTargetBoard": "KB2040",
+  "targetBoardLabel": "RP2040を搭載したボード",
   "realm": "keyboard",
   "tags": ["Kermite", "RP2040"],
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix-kfx/kermite_rp_unified",

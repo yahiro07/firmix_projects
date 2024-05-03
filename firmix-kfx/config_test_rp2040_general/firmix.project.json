@@ -5,7 +5,7 @@
     "ピンの入出力のサンプルです。スイッチを押すとLEDが光ります"
   ],
   "targetMcu": "RP2040",
-  "primaryTargetBoard": "KB2040",
+  "targetBoardLabel": "RP2040を搭載したボード",
   "repositoryUrl": "https://github.com/yahiro07/firmix_projects/tree/main/firmix-kfx/config_test_rp2040_general",
   "realm": "general",
   "tags": ["RP2040", "サンプル"],
